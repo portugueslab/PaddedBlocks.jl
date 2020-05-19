@@ -18,8 +18,6 @@ function Base.:*(a::Blocks, b::Blocks)
     )
 end
 
-JSON3.StructType(::Type{<:Blocks}) = JSON3.Struct()
-
 "Completes a partially-specified indexing expression"
 function complete_index(s, full_size)
     return I = tuple((
@@ -147,6 +145,9 @@ function blocks_containing(
 
 end
 
+# Define JSON serialization
+JSON3.StructType(::Type{<:Blocks}) = JSON3.Struct()
+
 function save(filename, b::Blocks)
     return open(filename, "w") do f
         return write(f, JSON3.write(b))
@@ -157,16 +158,4 @@ function load_blocks(filename)
     return open(filename, "r") do f
         return JSON3.read(f, Blocks)
     end
-end
-
-struct BlockResult{T}
-    results::AbstractArray{T}
-    blocks::Blocks
-end
-
-function BlockResult(folder::String)
-    files = sort(glob("*.jld2", folder))
-    results = map(f -> load(f, "result"), files)
-    blocks = load_blocks(joinpath(folder, "stack_metadata.json"))
-    return BlockResult(results, blocks)
 end
