@@ -1,5 +1,9 @@
 module PaddedBlocks
 
-# Write your package code here.
+using DocStringExtensions
+
+include("blocks.jl")
+
+export Blocks, slices
 
 end
