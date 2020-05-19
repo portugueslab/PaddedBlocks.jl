@@ -1,0 +1,13 @@
+name = "PaddedBlocks"
+uuid = "00ed6140-19f5-4745-8680-fdb6f4f73d16"
+authors = ["Vilim Štih <vilim@neuro.mpg.de>"]
+version = "0.1.0"
+
+[compat]
+julia = "1"
+
+[extras]
+Test = "8dfed614-e22c-5e08-85e1-65c5234f0b40"
+
+[targets]
+test = ["Test"]
