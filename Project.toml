@@ -1,7 +1,7 @@
 name = "PaddedBlocks"
 uuid = "00ed6140-19f5-4745-8680-fdb6f4f73d16"
 authors = ["Vilim Štih <vilim@neuro.mpg.de>"]
-version = "0.1.0"
+version = "0.1.1"
 
 [deps]
 DocStringExtensions = "ffbed154-4ef7-542d-bbb7-c09d3a79fcae"

@@ -5,3 +5,12 @@
 [![Stable](https://img.shields.io/badge/docs-stable-blue.svg)](https://portugueslab.github.io/PaddedBlocks.jl/stable)
 [![Dev](https://img.shields.io/badge/docs-dev-blue.svg)](https://portugueslab.github.io/PaddedBlocks.jl/dev)
 
+Provides a strucuture, `Blocks` which helps splitting computation along continuous spatio-temporal subsets of multidimensional datasets.
+
+## Example
+
+```julia
+
+b = Blocks()
+
+```

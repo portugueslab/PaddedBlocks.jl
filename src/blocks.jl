@@ -108,8 +108,8 @@ function blocks_to_take(
     file_slices = Array{Int64,2}(undef, (2, N))
     block_slices = Array{Int64,2}(undef, (2, N))
     for d in 1:N
-        start = I[d].start
-        stop = I[d].stop
+        start = first(I[d])
+        stop = last(I[d])
         axis_index = tuple(((i == d) ? Colon() : 1 for i in 1:N)..., d)
         s = searchsortedlast(block_starts[axis_index...], start)
         e = searchsortedlast(block_starts[axis_index...], stop)
